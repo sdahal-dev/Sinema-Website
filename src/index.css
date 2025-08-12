@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Body Default Design */
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right, #dabb20, #dc9032);
+}
+
+/* Navbar Default Design */
+.desktop-navbar-wrapper,
+.mobile-navbar-wrapper {
+  background: #dc9032a2;
+}
+
+/* Underline Hover Effect */
+.links {
+  width: max-content;
+  position: relative;
+  cursor: pointer;
+}
+.links::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  background-color: #fff;
+  transition: 0.3s;
+  transition-timing-function: easy-in-out;
+  transform: scaleX(0);
+}
+.links:hover::after {
+  transform: scaleX(1);
+}
