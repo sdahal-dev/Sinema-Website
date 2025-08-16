@@ -2,6 +2,7 @@ import { useState } from "react";
 import sinemaLogo from "../../assets/sinema-logo.png";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router";
 
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,13 +30,21 @@ const MobileNavbar = () => {
           onClick={() => setMenuOpen(false)}
           className="h-6 w-6 text-white absolute top-4 right-35 cursor-pointer"
         />
-        <a className="pt-[16vh] pb-[15vh]">Home</a>
+        <NavLink to="/" className="pt-[16vh] pb-[15vh]">
+          Home
+        </NavLink>
 
-        <a className="pb-[15vh]">Movies</a>
+        <NavLink to="/movies" className="pb-[15vh]">
+          Movies
+        </NavLink>
 
-        <a className="pb-[15vh]">Favorites</a>
+        <NavLink to="/favorites" className="pb-[15vh]">
+          Favorites
+        </NavLink>
 
-        <a className="pb-[15vh]">Search</a>
+        <NavLink to="/search" className="pb-[15vh]">
+          Search
+        </NavLink>
 
         <div className="pb-[15vh]">
           <button className="border-2 py-1 px-3 rounded-3xl">Sign In</button>
