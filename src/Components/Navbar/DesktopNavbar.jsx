@@ -1,5 +1,6 @@
 import sinemaLogo from "../../assets/sinema-logo.png";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { NavLink } from "react-router";
 
 const DesktopNavbar = () => {
   return (
@@ -12,13 +13,21 @@ const DesktopNavbar = () => {
 
       {/* Desktop Navbar Links */}
       <div className="navbar-links">
-        <a className="links ml-10 mr-6">Home</a>
+        <NavLink to="/" className="links ml-10 mr-6 font-bold">
+          Home
+        </NavLink>
 
-        <a className="links mx-6">Movies</a>
+        <NavLink to="/movies" className="links ml-10 mr-6 font-bold">
+          Movies
+        </NavLink>
 
-        <a className="links mx-6">Favorites</a>
+        <NavLink to="/favorites" className="links ml-10 mr-6 font-bold">
+          Favorites
+        </NavLink>
 
-        <a className="links mr-10 ml-6">Search</a>
+        <NavLink to="/search" className="links ml-10 mr-6 font-bold">
+          Search
+        </NavLink>
       </div>
 
       {/* Sign In / Log Out */}
