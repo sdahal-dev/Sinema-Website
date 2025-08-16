@@ -6,6 +6,7 @@ import { NavLink } from "react-router";
 
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <div className="mobile-navbar-wrapper flex w-full fixed justify-between items-center text-sm font-semibold text-white py-2 px-5 border-b">
@@ -15,6 +16,20 @@ const MobileNavbar = () => {
         <h1>Sinema</h1>
       </div>
 
+      {/* Search */}
+      <div className="search-bar-set relative">
+        <input
+          type="search"
+          placeholder="Search..."
+          value={searchValue}
+          className="py-1 pr-8 px-4 rounded-3xl border focus:outline-none w-[45vw]"
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <XMarkIcon
+          className="h-5 w-5 absolute right-2 top-1 ml-5 hover:cursor-pointer"
+          onClick={() => setSearchValue("")}
+        />
+      </div>
       {/* Menu Button */}
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
         <Bars3Icon className="h-6 w-6 text-white" />
@@ -28,7 +43,7 @@ const MobileNavbar = () => {
       >
         <XMarkIcon
           onClick={() => setMenuOpen(false)}
-          className="h-6 w-6 text-white absolute top-4 right-35 cursor-pointer"
+          className="h-6 w-6 text-white absolute top-4 left-10 cursor-pointer"
         />
         <NavLink to="/" className="pt-[16vh] pb-[15vh]">
           Home
@@ -41,14 +56,11 @@ const MobileNavbar = () => {
         <NavLink to="/favorites" className="pb-[15vh]">
           Favorites
         </NavLink>
-
-        <NavLink to="/search" className="pb-[15vh]">
-          Search
+        <NavLink to="/login">
+          <div className="pb-[15vh]">
+            <button className="border-2 py-1 px-3 rounded-3xl">Sign In</button>
+          </div>
         </NavLink>
-
-        <div className="pb-[15vh]">
-          <button className="border-2 py-1 px-3 rounded-3xl">Sign In</button>
-        </div>
       </div>
     </div>
   );
